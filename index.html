@@ -25,9 +25,47 @@
       left: 50%;
       translate: -50% -50%;
     }
+
+    .input-wrapper {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    label[for="img-input"] {
+      color: white;
+      padding: 1rem;
+      background: rebeccapurple;
+      border-radius: .2rem;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      float: left;
+      cursor: pointer;
+      transition: 300ms;
+      transform-origin: center center;
+      will-change: scale;
+      user-select: none;
+    }
+
+    label[for="img-input"]:hover {
+      scale: 1.1;
+      filter: brightness(1.4);
+    }
+
+    label[for="img-input"]:active {
+      scale: .9;
+      filter: brightness(.9);
+    }
+
+    .img-upload {
+      display: none;
+    }
   </style>
 </head>
 <body>
   <canvas class="cnv"></canvas>
+  <div class="input-wrapper">
+    <label for="img-input">Upload</label>
+    <input type="file" id="img-input" name="img-input" class="img-upload">
+  </div>
 </body>
 </html>
