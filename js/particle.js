@@ -12,8 +12,9 @@ class Particle {
 
   draw() {
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.particleSize / 2, 0, 2 * Math.PI);
+    // ctx.arc(this.x, this.y, this.particleSize / 2, 0, 2 * Math.PI);
     ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y, this.particleSize, this.particleSize);
     ctx.fill();
   }
 
@@ -32,9 +33,9 @@ class Particle {
     
     this.y += this.speed;
 
-    if (this.y > cnv.height) this.y = 0;
-
     this.draw();
+
+    if (this.y > cnv.height) this.y = 0;
   }
 
   remove() {

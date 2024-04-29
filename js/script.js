@@ -1,5 +1,5 @@
-const cols = 2;
-const rows = 2;
+const cols = 10;
+const rows = 10;
 
 let image;
 let imgData;
@@ -22,24 +22,15 @@ async function init(url) {
   //   }
   // }
 
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < 2000; i++) {
     new Particle(
       Math.random() * cnv.width, 0,
-      "red", rows, Math.random() * 2 + 1
+      "red", rows / 2, Math.random() * 2 + 1
     )
   }
 }
 
 init("/images/6e1d2ff43a026bee47e762472079a9c4.jpg");
-
-(function animate() {
-  requestAnimationFrame(animate);
-  fillCtx("rgba(0 0 0 / .02)");
-
-  Particle.particles.forEach(particle => {
-    particle.update();
-  });
-}());
 
 document
   .querySelector(".img-upload")
@@ -52,3 +43,12 @@ document
       if (data) init(data);
     });
   });
+
+(function animate() {
+  requestAnimationFrame(animate);
+  fillCtx("rgba(0 0 0 / .02)");
+
+  Particle.particles.forEach(particle => {
+    particle.update();
+  });
+}());
